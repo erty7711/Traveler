@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="big5"?>
+<Coder>
+
+
+	<T>
+		<C>TSA</C>
+		<D>台北松山(TSA)</D>
+
+	</T>
+	<T>
+		<C>TPE</C>
+		<D>台北桃園(TPE)</D>
+	</T>
+	<T>
+		<C>NRT</C>
+		<D>東京成田(NRT)</D>
+	</T>
+
+	<T>
+		<C>HND</C>
+		<D>東京羽田(HND)</D>
+	</T>
+	<T>
+		<C>KIX</C>
+		<D>大阪關西(KIX)</D>
+	</T>
+
+	<T>
+		<C>SEL</C>
+		<D>首爾仁川(SEL)</D>
+	</T>
+
+	<T>
+		<C>BKK</C>
+		<D>泰國曼谷(BKK)</D>
+	</T>
+	<T>
+		<C>SIN</C>
+		<D>新加坡(SIN)</D>
+	</T>
+
+
+</Coder>

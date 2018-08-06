@@ -1,0 +1,66 @@
+
+第一步
+
+
+
+USE [Traveler]
+GO
+
+
+CREATE FUNCTION GetOrderID()
+RETURNS nvarchar(20)
+AS
+BEGIN
+  DECLARE @orderID nvarchar(20)
+  DECLARE @DT nvarchar(20)
+  SELECT @DT = convert(varchar(10),getdate(),112)
+  SELECT @orderID= @DT + right('00' + ltrim(isnull(max(cast(right(orderID, 3) as int)),0)+1), 5) from airTickets where left(orderID, 8) = @DT
+  RETURN @orderID
+END
+
+
+
+
+第二步
+
+
+
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[airTickets](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[orderID] [nvarchar](20) NULL,
+	[memberId] [int] NULL,
+	[depT] [varchar](30) NULL,
+	[depDate] [varchar](30) NULL,
+	[depC] [varchar](30) NULL,
+	[arrT] [varchar](30) NULL,
+	[returnDate] [varchar](30) NULL,
+	[arrC] [varchar](30) NULL,
+	[totalP] [int] NULL,
+	[airline] [varchar](30) NULL,
+	[depNum] [varchar](30) NULL,
+	[returnNum] [varchar](30) NULL,
+	[bonus] [int] NULL,
+ CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[airTickets] ADD  CONSTRAINT [DF_airTickets_orderID]  DEFAULT ([dbo].[GetOrderID]()) FOR [orderID]
+GO
+

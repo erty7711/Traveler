@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* #allpage { */
+/* 	margin: 0 auto; */
+/* } */
+
+.menu {
+	overflow: auto;
+	width: 100%;
+	list-style-type: none;
+	background-color: #FF8800;
+	border-bottom: 3px solid #cccccc;
+}
+
+.me {
+	overflow: auto;
+	width: 100%;
+	list-style-type: none;
+
+
+}
+
+.menu li {
+	float: left;
+	width: 11em;
+	/*為了讓連結區域能依字型大小的變化自動放大,因此在指定width屬性時採用em為單位*/
+	border-right: 1px solid #cccccc;
+}
+
+.me li {
+	float: left;
+    width: 15em; 
+	/*為了讓連結區域能依字型大小的變化自動放大,因此在指定width屬性時採用em為單位*/
+	
+}
+
+.menu li a {
+	display: block;
+	width: 100%;
+	line-height: 3em;
+	/*讓文字上下空出適當的空白,不用padding屬性,直接將行Box的高度設的高一些*/
+	color: #333333;
+	text-decoration: none;
+	text-align: center;
+}
+
+.me li a {
+	display: block;
+	width: 100%;
+	line-height: 3em;
+	/*讓文字上下空出適當的空白,不用padding屬性,直接將行Box的高度設的高一些*/
+	color: #333333;
+	text-decoration: none;
+	text-align: center;
+}
+
+ .menu li a:hover { 
+	color: #FFFFFF; 
+ 	background-color: #AA7700; 
+ } 
+  .me li a:hover { 
+	color: #FFFFFF; 
+ 	background-color: #AA7700; 
+ }
